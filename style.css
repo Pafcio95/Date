@@ -1,0 +1,295 @@
+/* import font style from google fonts: satisfy */
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* hide inactive div */
+.inactive {
+    display: none !important;
+}
+
+/* zmienne */
+:root {
+    --shakeDegree: 10deg;
+}
+
+html {
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #820300;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #B80000;
+    min-height: 100vh;
+}
+
+.question {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 8rem;
+    font-family: "Satisfy";
+}
+
+h2 {
+    font-size: 5rem;
+    font-family: Satisfy;
+}
+
+.imgContainer {
+    position: relative;
+    width: 80%;
+    height: 50vh;
+    align-self: center;
+    overflow: hidden;
+    z-index: 0;
+}
+
+img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    display: block;
+    font-size: 4rem;
+    padding: 10px 100px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.optionYes,
+.confirm {
+    background-color: green;
+}
+
+.optionNo {
+    background-color: #f40;
+    transition: 200msA;
+}
+
+.animationNo {
+    animation: btnShakes 2000ms infinite linear;
+}
+
+.jump {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.noMove {
+    animation: btnMove 3s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+.offer {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-evenly;
+}
+
+.offer h1 {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.offer>div {
+    flex-basis: 30%;
+    flex-grow: 1;
+    margin: 0 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.offer .imgContainer {
+    width: 100%;
+}
+
+.offer img {
+    height: 100%;
+}
+
+.offer div:nth-of-type(1) img {
+    transform: translate(-47%, -50%);
+}
+
+.offer div:nth-of-type(2) img {
+    transform: translate(-65%, -50%);
+}
+
+.offer div:nth-of-type(3) img {
+    transform: translate(-48%, -50%);
+}
+
+.mark {
+    background-color: green;
+    border: 5px solid green;
+}
+
+.response>div {
+    position: absolute;
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+}
+
+.response>span {
+    white-space: nowrap;
+}
+
+@keyframes btnMove {
+    0% {
+        top: 50%;
+        left: 50%;
+    }
+
+    5% {
+        top: 50%;
+        left: 85%;
+    }
+
+    10% {
+        top: 50%;
+        left: 50%;
+    }
+
+    40% {
+        top: 50%;
+        left: 50%;
+    }
+
+    50% {
+        top: 25%;
+        left: 50%;
+    }
+
+    60% {
+        top: 50%;
+        left: 50%;
+    }
+
+    100% {
+        top: 50%;
+        left: 50%;
+    }
+}
+
+@keyframes btnShakes {
+    0% {
+        transform: rotate(0);
+    }
+
+    2% {
+        transform: rotate(calc(-1 * var(--shakeDegree)));
+    }
+
+    6% {
+        transform: rotate(var(--shakeDegree));
+    }
+
+    10% {
+        transform: rotate(calc(-1 * var(--shakeDegree)));
+    }
+
+    14% {
+        transform: rotate(var(--shakeDegree));
+    }
+
+    18% {
+        transform: rotate(calc(-1 * var(--shakeDegree)));
+    }
+
+    20% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@media(max-width: 733px) {
+    .offer>div {
+        flex-basis: 100%;
+        margin: 30px 10px;
+    }
+
+    .offer>button {
+        margin: 30px 10px;
+    }
+
+    .offer div:nth-of-type(2) img {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media(max-width: 640px) {
+    html {
+        font-size: 8px;
+    }
+
+    button {
+        padding: 10px 80px;
+    }
+}
+
+@media(max-width: 520px) {
+
+    button {
+        padding: 10px 60px;
+    }
+
+    .imgContainer {
+        width: 100%;
+    }
+
+    .offer div:nth-of-type(2) img {
+        transform: translate(-65%, -50%);
+    }
+}
+
+@media(max-width: 380px) {
+    html {
+        font-size: 6px;
+    }
+
+    button {
+        padding: 8px 40px;
+    }
+}
